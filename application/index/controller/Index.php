@@ -11,5 +11,6 @@ class Index
     public function hello($name = "world")
     {
         echo '练习提交分支';
+        echo 2232;
     }
 }
