@@ -24,17 +24,17 @@ namespace app\api\controller\v1;
         {
 
             (new IsIdInt())->goCheck();
-            try{
-                $banner = BannerModel::getBannerById($id);
-            }
-            catch(Exception $exception)
-            {
-                   $err = [
-                       'error_code' => '40001',
-                       'mag' => $exception
-                   ];
-                   return json($err,400);
-            }
+//            try{
+//                $banner = BannerModel::getBannerById($id);
+//            }
+//            catch(Exception $exception)
+//            {
+//                   $err = [
+//                       'error_code' => '40001',
+//                       'mag' => $exception
+//                   ];
+//                   return json($err,400);
+//            }
         }
 
 
