@@ -11,5 +11,10 @@ namespace app\lib\exception;
 
 class BannerMissException
 {
+    public $code = 404;
+
+    public $msg = '请求banner不存在';
+
+    public $errorCode = 40000;
 
 }

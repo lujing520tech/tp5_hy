@@ -4,12 +4,13 @@
  * User: Administrator
  * Date: 2020/10/22
  * Time: 16:58
+ * 异常处理
  */
 
 namespace app\lib\exception;
 
 
-use think\Exception;
+use Exception;
 use think\exception\Handle;
 
 class ExceptionHandler extends Handle
