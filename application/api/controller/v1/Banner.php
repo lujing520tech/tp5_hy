@@ -12,6 +12,7 @@ namespace app\api\controller\v1;
     use app\api\validate\IsIdInt;
     use app\lib\exception\BannerMissException;
     use think\Exception;
+    use think\Model;
 
     class Banner
     {
@@ -25,11 +26,11 @@ namespace app\api\controller\v1;
         {
 
             (new IsIdInt())->goCheck();
-            $re =  (new BannerModel)->getBannerById(1);
-            if(!$re){
+            $result =  (new BannerModel)->getBannerById($id);
+            if(!$result){
                 throw new BannerMissException();
             }
-            return $re;
+            return $result;
         }
 
 
