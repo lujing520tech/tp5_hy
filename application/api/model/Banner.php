@@ -16,25 +16,19 @@ use think\Db;
 class Banner extends BaseModel
 {
     //可以重新定义表名
-//    protected $table = 'banner_item';
-    protected $hidden = ['update_time','delete_time'];
+    protected $table = 'ims_cadic_adv';
+//    protected $hidden = ['update_time','delete_time'];
+
     public function items()
     {
         return $this->hasMany('banner_item','banner_id','id');
     }
 
 
-    public static function getBannerById($id)
+    public static function getBannerById()
     {
-        $result = self::with(['items','items.img'])->find($id);
+        $result = self::all();
         return $result;
     }
-    public static function test()
-    {
-        $data = [
-            'name' => 'name',
-            'age' => 'age'
-        ];
-        return $data;
-    }
+
 }

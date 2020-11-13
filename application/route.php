@@ -10,6 +10,11 @@
 // +----------------------------------------------------------------------
 
 use think\Route;
-Route::get('banner/:id','api/v1.Banner/getBanner');
-Route::get('theme','api/v1.Theme/getTheme');
+Route::get(':version/banner/:id','api/:version.Banner/getBanner');
+Route::get(':version/theme','api/:version.Theme/getTheme');
+Route::get(':version/theme/:id','api/:version.Theme/getThemeGoods');
+Route::get(':version/classify','api/:version.Classify/getClassify');
+Route::get(':version/classify/:pid','api/:version.Classify/getClassifyGoods');
+Route::get(':version/getNewGoods/:count','api/:version.Goods/GetNewGoods');
+Route::post(':version/getToken/user','api/:version.Token/getToken');
 

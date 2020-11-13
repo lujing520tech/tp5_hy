@@ -11,17 +11,27 @@ namespace app\api\model;
 
 class Theme extends BaseModel
 {
+    protected $table = 'ims_cadic_theme';
     public  function topicImg()
     {
-        return $this->belongsTo('Image','topic_img_id','id');
+        return $this->belongsTo('ThemeGoods','topic_img_id','id');
     }
     public function headImg()
     {
         return $this->belongsTo('Image','head_img_id','id');
     }
+    public function goods()
+    {
+        return $this->belongsToMany('Goods','ims_cadic_theme_goods','goods_id','theme_id');
+    }
     public function byTheme()
     {
-        $result = self::with(['topicImg','headImg'])->find();
+        $result = self::all();
+        return $result;
+    }
+    public function byThemeGoods($id)
+    {
+        $result = self::with('goods')->find($id);
         return $result;
     }
 

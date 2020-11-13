@@ -38,5 +38,37 @@ class BaseValidate extends Validate
         }
     }
 
+    /**
+     * @param $value
+     * @param string $rule
+     * @param string $data
+     * @param string $field
+     * @return bool|string
+     * 验证id参数
+     */
+    protected function isPositiveInteger($value,$rule='',$data='',$field='')
+    {
+        if(is_numeric($value)&&is_int($value+0)&&($value+0)>0)
+        {
+            return true;
+        }
+        else{
+            return $field.'必须是整正数';
+        }
+
+    }
+    protected function isNotEmpty($value,$rule='',$data='',$field='')
+    {
+        if(!empty($value))
+        {
+            return true;
+        }
+
+        else{
+            return false;
+        }
+
+    }
+
 
 }

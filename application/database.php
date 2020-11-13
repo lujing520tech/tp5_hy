@@ -15,7 +15,7 @@ return [
     // 服务器地址
     'hostname'        => '127.0.0.1',
     // 数据库名
-    'database'        => 'tp5_test',
+    'database'        => 'shch',
     // 用户名
     'username'        => 'root',
     // 密码
@@ -45,11 +45,12 @@ return [
     // 是否严格检查字段是否存在
     'fields_strict'   => true,
     // 数据集返回类型
-    'resultset_type'  => 'array',
+    'resultset_type'  => '\think\Collection',
     // 自动写入时间戳字段
     'auto_timestamp'  => false,
     // 时间字段取出后的默认时间格式
     'datetime_format' => false,
     // 是否需要进行SQL性能分析
     'sql_explain'     => false,
+
 ];

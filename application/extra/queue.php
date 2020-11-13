@@ -10,5 +10,6 @@
 // +----------------------------------------------------------------------
 
 return [
-    'img_prefix' => 'http://www.foot.com/public'
+    'img_prefix' => 'http://www.foot.com/public',
+    'past_time' =>7200
 ];

@@ -26,12 +26,10 @@ namespace app\api\controller\v1;
         {
 
             (new IsIdInt())->goCheck();
-            $result =  (new BannerModel)->getBannerById($id);
+            $result =  (new BannerModel)->getBannerById();
             if(!$result){
                 throw new BannerMissException();
             }
             return $result;
         }
-
-
     }
