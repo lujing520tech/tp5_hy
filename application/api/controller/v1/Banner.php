@@ -10,6 +10,7 @@ namespace app\api\controller\v1;
 
     use app\api\model\Banner as BannerModel;
     use app\api\validate\IsIdInt;
+    use app\api\validate\IsTypeInt;
     use app\lib\exception\BannerMissException;
     use think\Exception;
     use think\Model;
@@ -30,6 +31,13 @@ namespace app\api\controller\v1;
             if(!$result){
                 throw new BannerMissException();
             }
+            return $result;
+        }
+        //广告
+        public function getAdv($type)
+        {
+            (new IsTypeInt())->goCheck();
+            $result = (new BannerModel())->getAdvByType($type);
             return $result;
         }
     }

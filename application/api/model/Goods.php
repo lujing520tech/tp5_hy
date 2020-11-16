@@ -27,6 +27,13 @@ class Goods extends BaseModel
         $result = self::find($id);
         return $result;
     }
+
+    public function getGoodsImgAttr($value,$data)
+    {
+         $result = self::prefixGetUrl($value,$data);
+         return $result;
+    }
+
     public function getNewGoods($count)
     {
         $result = self::limit($count)->order('id desc')->select();

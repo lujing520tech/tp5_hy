@@ -24,6 +24,13 @@ class Theme extends BaseModel
     {
         return $this->belongsToMany('Goods','ims_cadic_theme_goods','goods_id','theme_id');
     }
+
+    public function getImgUrlAttr($value,$data)
+    {
+        $result = self::prefixGetUrl($value,$data);
+        return $result;
+    }
+
     public function byTheme()
     {
         $result = self::all();

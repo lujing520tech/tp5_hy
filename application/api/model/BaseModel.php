@@ -15,7 +15,7 @@ class BaseModel extends Model
 {
     protected function prefixGetUrl($value,$data)
     {
-        if($data['form'] == 1){
+        if($data['from'] != 1){
             //本地
             return config('queue.img_prefix').$value;
         }

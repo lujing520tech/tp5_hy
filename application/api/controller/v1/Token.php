@@ -17,9 +17,10 @@ class Token
 
         (new GetToken())->goCheck($code);
         $result = (new TokenModel())->getToken($code);
-        if ($result->is_Empty()){
+        if (empty($result)){
             throw new TokenException();
         }
+        return $result;
 
     }
 }

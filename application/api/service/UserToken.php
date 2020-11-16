@@ -29,17 +29,19 @@ class UserToken extends Token
     {
         $request = curl_get($this->wxTokenUrl);
         $wxResult = json_decode($request,true);
+
         if (empty($wxResult)){
             throw new Exception('获取微信appId及secret失败，微信内部错误');
         }
         else{
             $loginFail = array_key_exists('errcode',$wxResult);
-            if(!$loginFail){
+            if($loginFail){
                 //获取openid出错
                 $this->TokenError($wxResult);
             }
             else{
-                $this->userToken($wxResult);
+              $result = $this->userToken($wxResult);
+              return $result;
             }
         }
 
@@ -50,7 +52,7 @@ class UserToken extends Token
         $openid = $wxResult['openid'];
         //select userInfo
         $getUser = (new UserModel())->getUser($openid);
-        if ($getUser){
+        if (!$getUser){
             //insert user
             $uid = $this->newUser($openid);
         }
