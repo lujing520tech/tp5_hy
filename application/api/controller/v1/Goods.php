@@ -23,9 +23,10 @@ class Goods
     {
         (new IsIdInt());
         $result = (new GoodsModel())->getGoods($id);
-        if($result->isEmpty()){
+        if(empty($result)){
             throw new GoodsMissException;
         }
+        return $result;
     }
 
     /**

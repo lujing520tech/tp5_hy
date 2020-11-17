@@ -19,4 +19,5 @@ Route::get('api/:version/classify/:pid','api/:version.Classify/getClassifyGoods'
 Route::get('api/:version/getNewGoods/:count','api/:version.Goods/GetNewGoods');
 Route::post('api/:version/getToken/user','api/:version.Token/getToken');
 Route::get('api/:version/newGoods','api/:version.Goods/GetNewGoods');
+Route::get('api/:version/getGoods/:id','api/:version.Goods/getGoods');
 
