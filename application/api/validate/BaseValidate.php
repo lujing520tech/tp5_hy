@@ -70,5 +70,27 @@ class BaseValidate extends Validate
 
     }
 
+    /**
+     * @param $arrays
+     * @return array
+     * @throws ParameterException
+     * 过滤接口传来其他参数
+     */
+    public function getDataByRule($arrays)
+    {
+        if(array_key_exists('user_id',$arrays)||array_key_exists('uid',$arrays)){
+            throw new ParameterException([
+                'msg' => '非法请求，请求字段中包含uid，user_id 等敏感字段',
+            ]);
+        }
+        $newArray = [];
+        foreach ($this->rule as $key => $value){
+            $newArray[$key] = $arrays[$key];
+        }
+        return $newArray;
+    }
+
+
+
 
 }

@@ -20,4 +20,9 @@ Route::get('api/:version/getNewGoods/:count','api/:version.Goods/GetNewGoods');
 Route::post('api/:version/getToken/user','api/:version.Token/getToken');
 Route::get('api/:version/newGoods','api/:version.Goods/GetNewGoods');
 Route::get('api/:version/getGoods/:id','api/:version.Goods/getGoods');
+Route::post('api/:version/address/create','api/:version.Address/createAddress');
+Route::post('api/:version/address/update','api/:version.Address/updateAddress');
+Route::post('api/:version/order','api/:version.Order/placeOrder');
+Route::post('api/:version/pay','api/:version.Pay/pay');
+Route::post('api/:version/notify','api/:version.Pay/receiveNotify');
 
